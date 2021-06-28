@@ -25,7 +25,7 @@ loginHandler.addEventListener("click", function(event){
             token = JSON.parse(this.response);
             // Save token to session
             sessionStorage.setItem("token", token.accessToken);
-            location.replace('../page/create-qi.html');
+            location.replace('../pages/create-qi.html');
         }
     };
     xhr.send(data);
