@@ -1,8 +1,8 @@
-// export {DOMAIN, token}
 const DOMAIN = 'https://qi-management.herokuapp.com';
 const LOGIN_PATH = '/admin/auth';
 
 let token;
+console.log(token);
 
 var xhr = new XMLHttpRequest();
 var loginHandler = document.getElementById("login-btn");
@@ -23,15 +23,10 @@ loginHandler.addEventListener("click", function(event){
     xhr.onload = function (e) {
         if (this.status == 200) { 
             token = JSON.parse(this.response);
-            console.log(token);
-            location.replace('../page/home.html');
+            // Save token to session
+            sessionStorage.setItem("token", token.accessToken);
+            location.replace('../page/create-qi.html');
         }
     };
     xhr.send(data);
-
 });
-
-function login() {
-
-}
-
