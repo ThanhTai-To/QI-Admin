@@ -12,8 +12,6 @@ loginHandler.addEventListener("click", function(event){
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
 
-    console.log("username " + username);
-    console.log("password " + password);
     const data = JSON.stringify({
         username: username,
         password: password
