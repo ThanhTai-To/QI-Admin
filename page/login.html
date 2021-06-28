@@ -1,10 +1,9 @@
-<?php include_once("login.html"); ?>
 <!DOCTYPE html>
 <html>
-<title>Login Page Pop Up</title>
+<title>Login Page</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="../css/login.css">
 
 
 
@@ -22,24 +21,22 @@
 <div class="center">
   <h1>Sign In</h1>
 
-
   <form method="post">
     <div class="txt_field">
-      <input type="text" required>
+      <input type="text" id="username" required>
       <span></span>
       <label>Username</label>
     </div>
 
       <div class="txt_field">
-        <input type="text" required>
+        <input type="password" id="password" required>
         <span></span>
         <label>Password</label>
       </div>
-      <input type="submit" value="Login">
-    
+      <input type="submit" id="login-btn" value="Login">   
   </form>  
-    
 </div>
 
+  <script src="../js/login.js"></script>
 </body>
 </html>
