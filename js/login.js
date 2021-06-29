@@ -2,7 +2,6 @@ const DOMAIN = 'https://qi-management.herokuapp.com';
 const LOGIN_PATH = '/admin/auth';
 
 let token;
-console.log(token);
 
 var xhr = new XMLHttpRequest();
 var loginHandler = document.getElementById("login-btn");
