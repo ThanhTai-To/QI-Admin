@@ -1,3 +1,5 @@
+const DOMAIN = 'https://qi-management.herokuapp.com/admin';
+const CREATE_QI_PATH = '/quarantine-information';
 const token = sessionStorage.getItem("token");
 console.log(token);
 
@@ -68,6 +70,15 @@ const PROVINCE = {
     'YEN_BAI': {'vi':'Yên Bái', 'enum': 'YEN_BAI'}
 };
 
+var xhr = new XMLHttpRequest();
+var fromProvince = document.getElementById('from');
+var destination = document.getElementById('destination');
+var createQI = document.getElementById('create-qi-btn');
+var error = document.getElementById('error-msg');
+var loader = document.getElementById("loader-icon");
+
+let response;
+
 
 function addOptionsToSelect() {
     for (const key of Object.keys(PROVINCE)) {
@@ -80,7 +91,6 @@ function addOptionsToSelectFrom(key) {
     var option = document.createElement("option");
     option.text = PROVINCE[key].vi;
     option.setAttribute('value', PROVINCE[key].enum);
-    var fromProvince = document.getElementById('from');
     fromProvince.add(option, fromProvince[-1]);
 }
 
@@ -88,14 +98,93 @@ function addOptionsToSelectDestination(key) {
     var option = document.createElement("option");
     option.text = PROVINCE[key].vi;
     option.setAttribute('value', PROVINCE[key].enum);
-    var destination = document.getElementById('destination');
     destination.add(option, destination[-1]);
 }
 
+
+
+createQI.addEventListener('click', function(event) {
+    event.preventDefault();
+    // Add loader
+    loader.setAttribute('class', 'fa fa-spinner fa-spin');
+    error.innerText = '';
+    var originPlace = from.value;
+    var destinationPlace = destination.value;
+    var startDate = document.getElementById('start-date').value;
+    var endDate = document.getElementById('end-date').value;
+    console.log(originPlace);
+    console.log(destinationPlace);
+    console.log(startDate);
+    console.log(endDate);
+
+    if (isEmpty(originPlace) || isEmpty(destinationPlace) 
+        || isEmpty(startDate)) {
+        error.innerText = 'Start date can not empty';
+        // remove loader
+        loader.removeAttribute('class', 'fa fa-spinner fa-spin');
+        return;
+    }
+
+    if (originPlace == destinationPlace) {
+        error.innerText = 'From province and destination can not be the same';
+        // remove loader
+        loader.removeAttribute('class', 'fa fa-spinner fa-spin');
+        return;
+    }
+    
+    if (!isEmpty(endDate)) {
+        if (startDate > endDate) {
+            error.innerText = 'End date must greater than start date';
+            // remove loader
+            loader.removeAttribute('class', 'fa fa-spinner fa-spin');
+            return;
+        }
+    } else if (isEmpty(endDate)) {endDate = null;}
+
+    const data = JSON.stringify({
+        originFrom: originPlace,
+        destination: destinationPlace,
+        startAt: reformatDate(startDate),
+        endAt: reformatDate(endDate)
+    });
+
+    xhr.open('POST',  DOMAIN + CREATE_QI_PATH, true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+    xhr.onreadystatechange = function (e) {
+        if (this.readyState == 4 && this.status == 201) { 
+            response = JSON.parse(this.response);
+            alert("Created  Quarantine information successfully");            
+            location.replace('../pages/create-qi.html');
+        } else if (this.status == 401 || this.status == 400) {
+            console.log(response);
+            // remove loader
+            loader.removeAttribute('class', 'fa fa-spinner fa-spin');
+            alert("Technical error");
+        } 
+    };
+    xhr.send(data);
+    console.log("end");
+    
+
+
+})
+
+function isEmpty(input) {
+    if (input.length == 0) {
+        return true;
+    }
+    return false;
+} 
+
+function reformatDate(dateStr) {
+    if(dateStr.length != 0) {
+        dArr = dateStr.split("-");  // ex input "2010-01-18"
+        console.log(dArr);
+        return dArr[2]+ "-" +dArr[1]+ "-" +dArr[0]; //ex out: "18/01/10"
+    }
+}
 // onclick navbar
 
-// validate create qi
-// can not same province
-// start date >= now
 
 

@@ -1,5 +1,5 @@
-const DOMAIN = 'https://qi-management.herokuapp.com';
-const LOGIN_PATH = '/admin/auth';
+const DOMAIN = 'https://qi-management.herokuapp.com/admin';
+const LOGIN_PATH = '/auth';
 
 let response;
 
@@ -28,7 +28,7 @@ loginHandler.addEventListener("click", function(event){
 
     xhr.open('POST',  DOMAIN + LOGIN_PATH, true);
     xhr.setRequestHeader('Content-Type', 'application/json');
-	xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+	// xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
     xhr.onreadystatechange = function (e) {
         if (this.readyState == 4 && this.status == 200) { 
             response = JSON.parse(this.response);

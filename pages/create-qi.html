@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quarantine information management</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/create-qi.css">
 </head>
 
@@ -33,7 +34,8 @@
                         <select name="from" id="from">
                         </select>
                     </div>
-                </div> <!--End of .row-->
+                </div>
+                <!--End of .row-->
 
                 <div class="row">
                     <div class="col-sm">
@@ -43,35 +45,45 @@
                         <select name="Destination will be quarantine" id="destination">
                         </select>
                     </div>
-                </div><!--End of .row-->
+                </div>
+                <!--End of .row-->
 
                 <div class="row">
                     <div class="col-sm">
                         <label for="Start Date">Start Date:</label>
                     </div>
                     <div class="col-sm">
-                        <input type="date" id="Start Date" name="Start Date">
+                        <input type="date" id="start-date" name="Start Date">
                     </div>
-                </div><!--End of .row-->
+                </div>
+                <!--End of .row-->
 
                 <div class="row">
                     <div class="col-sm">
                         <label for="End Date">End Date:</label>
                     </div>
                     <div class="col-sm">
-                        <input type="date" id="End Date" name="End Date">
+                        <input type="date" id="end-date" name="End Date">
                     </div>
-                </div><!--End of .row-->
+                </div>
+                <!--End of .row-->
+
+                <pre id="error-msg"></pre>
 
                 <div class="row create-btn">
-                    <button name="create" class="create-qi-btn" id="create-qi-btn">Create</button>
-                </div><!--End of .row .create-btn-->
-            </div><!--End of .container-->
+                    <button name="create" class="create-qi-btn" id="create-qi-btn">Create<em
+                            id='loader-icon'></em></button>
+                </div>
+                <!--End of .row .create-btn-->
+            </div>
+            <!--End of .container-->
         </form>
     </div>
 
-
     <script src="../js/create-qi.js"></script>
+    <!--     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 </body>
 
