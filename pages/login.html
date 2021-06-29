@@ -32,15 +32,31 @@
       </div>
 
       <div class="txt_field">
-        <input type="password" id="password" required>
+        <input type="password" id="password" required minlength="8">
         <span></span>
         <label>Password</label>
       </div>
-      <input type="submit" id="login-btn" value="Login">
+      <pre id="error-msg"></pre>
+      <button type="submit" id="login-btn" value="Login">
+        Login<i id='loader-icon'></i>
+      </button>
     </form>
   </div>
 
+  <div class="se-pre-con"></div>
+
+
   <script src="../js/login.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+  <script>
+    $(window).load(function () {
+      // Animate loader off screen
+      $(".se-pre-con").fadeOut("slow");;
+    });
+  </script>
+
 </body>
 
 </html>

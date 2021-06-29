@@ -10,87 +10,30 @@
     <link rel="stylesheet" href="../css/create-qi.css">
 </head>
 
-<body>
+<body onload="addOptionsToSelect()">
 
     <div class="sidebar">
-        <a href="#home">Home</a>
-        <a href="#news">Create QI</a>
+        <a id="home-page">Home</a>
+        <a id="create-qi-page">Create QI</a>
         <a href="#contact"></a>
         <a href="#about"></a>
     </div>
 
 
-    <div class="content ">
+    <div class="create-qi">
         <form method="post">
             <div class="container">
-                <p class="text-center">Create Quarantine Information Form</p>
-
+                <h1 class="text-center">Create Quarantine Information Form</h1>
+                <hr>
                 <div class="row">
                     <div class="col-sm">
                         <label for="From">From:</label>
                     </div>
                     <div class="col-sm">
                         <select name="from" id="from">
-                            <option value="Hà Nội">Hà Nội</option>
-                            <option value="TP Hải Phòng">TP Hải Phòng</option>
-                            <option value="Đồng Nai">Đồng Nai</option>
-                            <option value="Hòa Bình">Hòa Bình</option>
-                            <option value="TP Đà Nẵng">TP Đà Nẵng</option>
-                            <option value="Gia Lai">Gia Lai</option>
-                            <option value="Hòa Bình">Hòa Bình</option>
-                            <option value="Hưng Yên">Hưng Yên</option>
-                            <option value="An Giang">An Giang</option>
-                            <option value="Bắc Giang">Bắc Giang</option>
-                            <option value="Bà Rịa-Vũng Tàu">Bà Rịa-Vũng Tàu</option>
-                            <option value="Bạc Liêu">Bạc Liêu</option>
-                            <option value="Bến Tre">Bến Tre</option>
-                            <option value="Bình Dương">Bình Dương</option>
-                            <option value="Bình Phước">Bình Phước</option>
-                            <option value="Bình Định">Bình Định</option>
-                            <option value="TP Cần Thơ">TP Cần Thơ</option>
-                            <option value="Lâm Đồng">Lâm Đồng</option>
-                            <option value="Kiên Giang">Kiên Giang</option>
-                            <option value="Kon Tum">Kon Tum</option>
-                            <option value="Lai Châu">Lai Châu</option>
-                            <option value="Hà Giang">Hà Giang</option>
-                            <option value="Hà Nam"> Hà Nam</option>
-                            <option value="Hà Tĩnh"> Hà Tĩnh</option>
-                            <option value="Hưng Yên">Hưng Yên</option>
-                            <option value="Hải Dương">Hải Dương</option>
-                            <option value="Hậu Giang">Hậu Giang</option>
-                            <option value="Cao Bằng">Cao Bằng</option>
-                            <option value="Cà Mau">Cà Mau</option>
-                            <option value="Đồng Tháp">Đồng Tháp</option>
-                            <option value="Khánh Hòa">Khánh Hòa</option>
-                            <option value="Quảng Ninh">Quảng Ninh</option>
-                            <option value="Quảng Trị">Quảng Trị</option>
-                            <option value="Sóc trăng">Sóc Trăng</option>
-                            <option value="Sơn La">Sơn La</option>
-                            <option value="Thanh Hóa">Thanh Hóa</option>
-                            <option value="Thái Bình">Thái Bình</option>
-                            <option value="Thái Nguyên">Thái Nguyên</option>
-                            <option value="Thừa Thiên-Huế">Thừa Thiên-Huế</option>
-                            <option value="Tiền Giang">Tiền Giang</option>
-                            <option value="Trà Vinh">Trà Vinh</option>
-                            <option value="Tuyên Quang">Tuyên Quang</option>
-                            <option value="Tây Ninh">Tây Ninh</option>
-                            <option value="Vĩnh Long">Vĩnh Long</option>
-                            <option value="Vĩnh Phúc">Vĩnh Phúc</option>
-                            <option value="Yên Bái">Yên Bái</option>
-                            <option value="Long An">Long An</option>
-                            <option value="Lào Cai">Lào Cai</option>
-                            <option value="Lạng Sơn">Lạng Sơn</option>
-                            <option value="Nam Định">Nam Định</option>
-                            <option value="Nghệ An">Nghệ An</option>
-                            <option value="Ninh Bình">Ninh Bình</option>
-                            <option value="Phú Thọ">Phú Thọ</option>
-                            <option value="Phú Yên">Phú Yên</option>
-                            <option value="Quảng Bình">Quảng Bình</option>
-                            <option value="Quảng Nam">Quảng Nam</option>
-                            <option value="Quảng Ngãi">Quảng Ngãi</option>
                         </select>
                     </div>
-                </div>
+                </div> <!--End of .row-->
 
                 <div class="row">
                     <div class="col-sm">
@@ -98,66 +41,9 @@
                     </div>
                     <div class="col-sm">
                         <select name="Destination will be quarantine" id="destination">
-                            <option value="Hà Nội">Hà Nội</option>
-                            <option value="TP Hải Phòng">TP Hải Phòng</option>
-                            <option value="Đồng Nai">Đồng Nai</option>
-                            <option value="Hòa Bình">Hòa Bình</option>
-                            <option value="TP Đà Nẵng">TP Đà Nẵng</option>
-                            <option value="Gia Lai">Gia Lai</option>
-                            <option value="Hòa Bình">Hòa Bình</option> \
-                            <option value="Hưng Yên">Hưng Yên</option>
-                            <option value="An Giang">An Giang</option>
-                            <option value="Bắc Giang">Bắc Giang</option>
-                            <option value="Bà Rịa-Vũng Tàu">Bà Rịa-Vũng Tàu</option>
-                            <option value="Bạc Liêu">Bạc Liêu</option>
-                            <option value="Bến Tre">Bến Tre</option>
-                            <option value="Bình Dương">Bình Dương</option>
-                            <option value="Bình Phước">Bình Phước</option>
-                            <option value="Bình Định">Bình Định</option>
-                            <option value="TP Cần Thơ">TP Cần Thơ</option>
-                            <option value="Lâm Đồng">Lâm Đồng</option>
-                            <option value="Kiên Giang">Kiên Giang</option>
-                            <option value="Kon Tum">Kon Tum</option>
-                            <option value="Lai Châu">Lai Châu</option>
-                            <option value="Hà Giang">Hà Giang</option>
-                            <option value="Hà Nam"> Hà Nam</option>
-                            <option value="Hà Tĩnh"> Hà Tĩnh</option>
-                            <option value="Hưng Yên">Hưng Yên</option>
-                            <option value="Hải Dương">Hải Dương</option>
-                            <option value="Hậu Giang">Hậu Giang</option>
-                            <option value="Cao Bằng">Cao Bằng</option>
-                            <option value="Cà Mau">Cà Mau</option>
-                            <option value="Đồng Tháp">Đồng Tháp</option>
-                            <option value="Khánh Hòa">Khánh Hòa</option>
-                            <option value="Quảng Ninh">Quảng Ninh</option>
-                            <option value="Quảng Trị">Quảng Trị</option>
-                            <option value="Sóc trăng">Sóc Trăng</option>
-                            <option value="Sơn La">Sơn La</option>
-                            <option value="Thanh Hóa">Thanh Hóa</option>
-                            <option value="Thái Bình">Thái Bình</option>
-                            <option value="Thái Nguyên">Thái Nguyên</option>
-                            <option value="Thừa Thiên-Huế">Thừa Thiên-Huế</option>
-                            <option value="Tiền Giang">Tiền Giang</option>
-                            <option value="Trà Vinh">Trà Vinh</option>
-                            <option value="Tuyên Quang">Tuyên Quang</option>
-                            <option value="Tây Ninh">Tây Ninh</option>
-                            <option value="Vĩnh Long">Vĩnh Long</option>
-                            <option value="Vĩnh Phúc">Vĩnh Phúc</option>
-                            <option value="Yên Bái">Yên Bái</option>
-                            <option value="Long An">Long An</option>
-                            <option value="Lào Cai">Lào Cai</option>
-                            <option value="Lạng Sơn">Lạng Sơn</option>
-                            <option value="Nam Định">Nam Định</option>
-                            <option value="Nghệ An">Nghệ An</option>
-                            <option value="Ninh Bình">Ninh Bình</option>
-                            <option value="Phú Thọ">Phú Thọ</option>
-                            <option value="Phú Yên">Phú Yên</option>
-                            <option value="Quảng Bình">Quảng Bình</option>
-                            <option value="Quảng Nam">Quảng Nam</option>
-                            <option value="Quảng Ngãi">Quảng Ngãi</option>
                         </select>
                     </div>
-                </div>
+                </div><!--End of .row-->
 
                 <div class="row">
                     <div class="col-sm">
@@ -166,7 +52,7 @@
                     <div class="col-sm">
                         <input type="date" id="Start Date" name="Start Date">
                     </div>
-                </div>
+                </div><!--End of .row-->
 
                 <div class="row">
                     <div class="col-sm">
@@ -175,20 +61,22 @@
                     <div class="col-sm">
                         <input type="date" id="End Date" name="End Date">
                     </div>
-                </div>
+                </div><!--End of .row-->
 
-                <div class="row">
-                    <button name="submit" class="create-qi-btn">Submit</button>
-                </div>
-            </div>
-
+                <div class="row create-btn">
+                    <button name="create" class="create-qi-btn" id="create-qi-btn">Create</button>
+                </div><!--End of .row .create-btn-->
+            </div><!--End of .container-->
         </form>
-
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+    <script src="../js/create-qi.js"></script>
+
+
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
 </body>
 
 </html>

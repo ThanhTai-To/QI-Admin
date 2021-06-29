@@ -118,15 +118,8 @@ form .txt_field{
 .txt_field input:valid ~ span::before{
   width: 100%;
 }
-.pass{
-  margin: -5px 0 20px 5px;
-  color: #a6a6a6;
-  cursor: pointer;
-}
-.pass:hover{
-  text-decoration: underline;
-}
-input[type="submit"]{
+
+#login-btn{
   width: 100%;
   height: 50px;
   border: 1px solid;
@@ -138,7 +131,7 @@ input[type="submit"]{
   cursor: pointer;
   outline: none;
 }
-input[type="submit"]:hover{
+#login-btn:hover{
   border-color: #4f5069;
   transition: .5s;
 }
@@ -156,4 +149,22 @@ input[type="submit"]:hover{
   text-decoration: underline;
 }
 
+/* Load page */
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(https://smallenvelop.com/wp-content/uploads/2014/08/Preloader_11.gif) center no-repeat #fff;
+}
 
+pre {
+  color: red;
+  font-size: 14px;
+  font-style: italic;
+  margin-bottom: 10px;
+}

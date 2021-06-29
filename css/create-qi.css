@@ -26,7 +26,7 @@ body {
 
 .sidebar a {
     display: block;
-    color: white;
+    color: white !important;
     padding: 16px;
     text-decoration: none;
     font-size: 1rem;
@@ -40,11 +40,11 @@ body {
 .sidebar a:hover:not(.active) {
     background-color: #606186;
     color: white;
+    cursor: pointer;
 }
 
-.content {
+.create-qi {
     width: 80%;
-    height: 100%;
     right: 0px;
     padding: 5px;
     position: fixed;
@@ -56,37 +56,9 @@ form {
     box-shadow: 10px 10px 15px 10px rgba(0, 0, 0, 0.05);
     padding: 20px;
     margin: 30px;
-    /* display: inline-block; */
     justify-content: center;
 }
 
-
-
-
-/* .center{
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-width: 500px;
-height: 500px;
-background: white;
-border-radius: 10px;
-box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
-} */
-
-
-/* 
-input[type=submit] {
-  background-color:#4f5069;
-  color: white;
-  padding: 5px 5px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: left;
-}
- */
 
 
 select,
@@ -102,36 +74,20 @@ input[type="text"] {
 }
 
 
-/* input[type="submit"] {
-    width: 100%;
-    height: 50px;
-    border: 1px solid;
-    background: #4f5069;
-    border-radius: 25px;
-    font-size: 18px;
-    color: #e9f4fb;
-    font-weight: 700;
-    cursor: pointer;
-    outline: none;
-}
-
-input[type="submit"]:hover {
-    border-color: #4f5069;
-    transition: .5s;
-} */
-
-
 button {
     background-color: #606186;
     color: white;
     padding: 14px 20px;
-    margin: 8px 0;
+    margin: 6px 0;
     border: none;
     cursor: pointer;
-    width: 100px;
+    width: 150px;
     border-radius: 25px;
 }
 
+.create-btn {
+    justify-content: center;
+}
 
 
 @media screen and (max-width: 700px) {
@@ -145,11 +101,11 @@ button {
         float: left;
     }
 
-    div.content {
+    div.create-qi {
         margin-left: 0;
     }
 
-    .content {
+    .create-qi {
         width: 100%;
         height: 100%;
         right: 0px;
