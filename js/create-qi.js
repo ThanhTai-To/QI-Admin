@@ -71,7 +71,6 @@ const PROVINCE = {
 
 function addOptionsToSelect() {
     for (const key of Object.keys(PROVINCE)) {
-        // console.log(key, PROVINCE[key]);
         addOptionsToSelectFrom(key);
         addOptionsToSelectDestination(key);
     }
