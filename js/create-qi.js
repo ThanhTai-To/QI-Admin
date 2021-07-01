@@ -75,8 +75,9 @@ var fromProvince = document.getElementById('from');
 var destination = document.getElementById('destination');
 var createQI = document.getElementById('create-qi-btn');
 var error = document.getElementById('error-msg');
-var loader = document.getElementById("loader-icon");
-
+var loader = document.getElementById('loader-icon');
+var homeNav = document.getElementById('home-nav');
+var createQINav = document.getElementById('create-qi-nav');
 let response;
 
 
@@ -179,12 +180,24 @@ function isEmpty(input) {
 
 function reformatDate(dateStr) {
     if(dateStr.length != 0) {
-        dArr = dateStr.split("-");  // ex input "2010-01-18"
+        let dArr = dateStr.split("-");  // ex input "2010-01-18"
         console.log(dArr);
         return dArr[2]+ "-" +dArr[1]+ "-" +dArr[0]; //ex out: "18/01/10"
     }
 }
-// onclick navbar
 
+// onclick navbar
+homeNav.addEventListener('click', function(event) {
+    event.preventDefault();
+    createQINav.removeAttribute('class', 'active')
+    homeNav.setAttribute('class', 'active');
+    location.replace('../pages/home.html');
+})
+createQINav.addEventListener('click', function(event) {
+    event.preventDefault();
+    homeNav.removeAttribute('class', 'active')
+    createQINav.setAttribute('class', 'active');
+    location.replace('../pages/create-qi.html');
+})
 
 

@@ -33,8 +33,13 @@ body {
 }
 
 .sidebar a.active {
-    background-color: #4f5069;
+    background-color: #6d6d85;
     color: white;
+}
+.sidebar a.active:hover {
+    background-color: #606186;
+    color: white;
+    cursor: pointer;
 }
 
 .sidebar a:hover:not(.active) {
