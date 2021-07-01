@@ -179,7 +179,7 @@ function isEmpty(input) {
 } 
 
 function reformatDate(dateStr) {
-    if(dateStr.length != 0) {
+    if(dateStr.length != null) {
         let dArr = dateStr.split("-");  // ex input "2010-01-18"
         console.log(dArr);
         return dArr[2]+ "-" +dArr[1]+ "-" +dArr[0]; //ex out: "18/01/10"
