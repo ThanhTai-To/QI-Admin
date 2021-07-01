@@ -172,14 +172,14 @@ createQI.addEventListener('click', function(event) {
 })
 
 function isEmpty(input) {
-    if (input.length == 0) {
+    if (input == null || input.length == 0) {
         return true;
     }
     return false;
 } 
 
 function reformatDate(dateStr) {
-    if(dateStr.length != null) {
+    if(dateStr != null) {
         let dArr = dateStr.split("-");  // ex input "2010-01-18"
         console.log(dArr);
         return dArr[2]+ "-" +dArr[1]+ "-" +dArr[0]; //ex out: "18/01/10"
