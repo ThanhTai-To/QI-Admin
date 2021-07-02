@@ -123,7 +123,6 @@ function getQuarantineInformationList(page) {
 
 
 function displayBlockQuarantineInformation(element) {
-    // console.log(element);
     content.innerHTML += 
     `<div class="row block-qi" id="` + element.id + `">
         <div class="container inside-block-qi">
@@ -164,7 +163,7 @@ function checkQuarantineInformationStatus(status='NEW') {
     return ``;
 }
 
-function checkReasonUpdated(status='NEW', reasonUpdated) {
+function checkReasonUpdated(status, reasonUpdated) {
     if (isUpdatedStatus(status)) {
         return `<p class="text">Reason Updated: </p>
                 <p class="text">` + reasonUpdated + `</p>`;
@@ -208,7 +207,6 @@ function loadEventListeners() {
     // pagination listeners
     var pageLinks = pagination.getElementsByClassName('page-link');
     for (let pageLink of pageLinks) {
-        // console.log(pageLink.id);
         pageLink.addEventListener('click', function(event) {
             event.preventDefault();
             console.log('clicked page: ' + pageLink.id);
@@ -237,8 +235,6 @@ function loadEventListeners() {
                 sessionStorage.setItem("currentPage", currentPageOfAPI);
                 location.reload();// location.replace('../pages/home.html'); refresh page to reload body              
             }
-            // TODO: 
-
         })
     }    
 }
@@ -247,17 +243,17 @@ function spliterator(input) {
     return input.split('-');
 }
 
-function loadPaginationIndexActive(currentPageOfAPI, totalPage) {
-    console.log('loadPaginationIndexActive = ' + currentPageOfAPI);
-    if (currentPageOfAPI == null) {
-        currentPageOfAPI = 0;
+function loadPaginationIndexActive(currentPageIndexOfAPI, totalPage) {
+    console.log('loadPaginationIndexActive = ' + currentPageIndexOfAPI);
+    if (currentPageIndexOfAPI == null) {
+        currentPageIndexOfAPI = 0;
     }
-    var currentPageOfPagination = Number(currentPageOfAPI) + 1;
+    var currentPageOfPagination = Number(currentPageIndexOfAPI) + 1;
     if (currentPageOfPagination == 1) {
         var previous = document.getElementById('previous');
         previous.classList.add('disabled');
     } else if (currentPageOfPagination == totalPage) {
-        var next = document.getElementById('next');;
+        var next = document.getElementById('next');
         next.classList.add('disabled');
     }
 
@@ -285,7 +281,6 @@ createQINav.addEventListener('click', function(event) {
 // document.onclick= function(event) {
 //     if (event===undefined) event= window.event;
 //     var target= 'target' in event? event.target : event.srcElement;
-
 //     console.log('clicked on '+target.tagName);
 // };
 
