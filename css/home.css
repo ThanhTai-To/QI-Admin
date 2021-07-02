@@ -180,3 +180,6 @@ p {
         }
     }
 }
+
+/* Loader */
+#loader { justify-content: center;}

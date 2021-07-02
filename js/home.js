@@ -84,6 +84,7 @@ function loadBody() {
     homeNav.setAttribute('class', 'active');
     getQuarantineInformationList(currentPageOfAPI);
     console.log("loaded body");
+
 }
 
 
@@ -106,6 +107,7 @@ function getQuarantineInformationList(page) {
             response.quarantineInformationList.forEach(element => displayBlockQuarantineInformation(element));
             loadEventListeners();
             loadPaginationIndexActive(currentPageOfAPI, response.totalPage);
+            removeLoaderAfterLoadedBody();
         } else if (this.status == 401 || this.status == 400) {
             console.log(this.status);
             alert("Technical error");
@@ -259,6 +261,11 @@ function loadPaginationIndexActive(currentPageIndexOfAPI, totalPage) {
 
     var paginationIndex = document.getElementById('page-item-' + currentPageOfPagination);
     paginationIndex.classList.add('active');
+}
+
+function removeLoaderAfterLoadedBody() {
+    var loader = document.getElementById('loader');
+    loader.remove();
 }
 
 
