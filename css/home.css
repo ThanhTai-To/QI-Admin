@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Lato", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #e3e5e9;
+}
+
+p {
+    margin-bottom: 0px;
+}
+
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 18%;
+    background-color: #4f5069;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.sidebar a {
+    display: block;
+    color: white !important;
+    padding: 16px;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.sidebar a.active {
+    background-color: #6d6d85;
+    color: white;
+}
+
+.sidebar a.active:hover {
+    background-color: #606186;
+    color: white;
+    cursor: pointer;
+}
+
+.sidebar a:hover:not(.active) {
+    background-color: #606186;
+    color: white;
+    cursor: pointer;
+}
+
+.right-sidebar {
+    width: 82%;
+    height: 100%;
+    right: 0px;
+    padding: 5px;
+    position: absolute;
+}
+
+
+.content-block {
+    width: 100%;
+    margin: auto;
+    padding: 50px;
+}
+
+.pagination-bar {
+    /* width: 100%; */
+    /* height: 10%;
+    bottom: 0px;
+    margin: auto; */
+    justify-content: center;
+    /* position: absolute; */
+}
+
+.block-qi {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: white;
+    border: 0px solid black;
+    border-radius: 15px;
+    box-shadow: 4px 4px 3px rgb(189, 187, 187);
+}
+
+.block-qi:hover {
+    background-color: #e1e2e7;
+    border-style: solid;
+    border-radius: 15px;
+    box-shadow: 5px 5px 3px grey;
+}
+
+.inside-block-qi .text {
+    display: inline-block;
+
+}
+
+.content-block-qi .text {
+    padding-left: 15px;
+    /* padding-right: 15px */
+}
+
+.reason-updated .text {
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #b30b2d;
+    font-style: italic;
+    font-size: 12px;
+}
+
+.from-place {
+    color: green;
+}
+
+.destination-place {
+    color: rgb(211, 12, 12);
+}
+
+.utils {
+    padding-right: 0px;
+}
+
+.utils button {
+    margin-left: 4px;
+}
+
+.utils-icon {
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    border-radius: 50%;
+    border-color: black;
+    width: 27px;
+    height: 27px;
+    display: inline-block;
+}
+
+.utils-icon:hover {
+    background-color: rgb(196, 191, 191);
+    width: 30px;
+    height: 30px;
+    transition: .5s;
+}
+
+.utils-icon:active {
+    background-color: rgb(155, 150, 150);
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 900px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .sidebar a {
+        float: left;
+    }
+
+    .right-sidebar {
+        width: 100%;
+        justify-content: center;
+    }
+
+    @media screen and (max-width: 400px) {
+        .sidebar a {
+            text-align: center;
+            float: none;
+        }
+    }
+}

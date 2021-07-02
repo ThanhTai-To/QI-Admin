@@ -1,7 +1,10 @@
 const DOMAIN = 'https://qi-management.herokuapp.com/admin';
 const CREATE_QI_PATH = '/quarantine-information';
-const token = sessionStorage.getItem("token");
+const token = sessionStorage.getItem('token');
+sessionStorage.setItem('token', token);
 console.log(token);
+sessionStorage.removeItem('currentPage');
+
 
 // https://vi.wikipedia.org/wiki/T%E1%BB%89nh_th%C3%A0nh_Vi%E1%BB%87t_Nam
 const PROVINCE = {
@@ -81,7 +84,10 @@ var createQINav = document.getElementById('create-qi-nav');
 let response;
 
 
-function addOptionsToSelect() {
+function loadBody() {
+    homeNav.removeAttribute('class', 'active')
+    createQINav.setAttribute('class', 'active');
+    // Add options to selects
     for (const key of Object.keys(PROVINCE)) {
         addOptionsToSelectFrom(key);
         addOptionsToSelectDestination(key);

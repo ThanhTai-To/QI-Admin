@@ -1,3 +1,5 @@
+sessionStorage.removeItem('token');
+console.log(sessionStorage.getItem('token'));
 const DOMAIN = 'https://qi-management.herokuapp.com/admin';
 const LOGIN_PATH = '/auth';
 
@@ -33,7 +35,7 @@ loginHandler.addEventListener("click", function(event){
             response = JSON.parse(this.response);
             // Save token to session
             sessionStorage.setItem("token", response.accessToken);
-            location.replace('../pages/create-qi.html');
+            location.replace('../pages/home.html');
         } else if (this.status == 401) {
             // remove loader
             loader.removeAttribute('class', 'fa fa-spinner fa-spin');
