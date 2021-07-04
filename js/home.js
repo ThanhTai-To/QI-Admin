@@ -3,6 +3,11 @@ const QI_PATH = '/quarantine-information';
 const token = sessionStorage.getItem('token');
 sessionStorage.setItem('token', token);
 console.log(token);
+
+if (token == null) {
+    location.replace('../pages/login.html');
+}
+
 let currentPageOfAPI = sessionStorage.getItem('currentPage');
 console.log('currentPage of API: ' + currentPageOfAPI);
 
@@ -267,6 +272,7 @@ let homeNav = document.getElementById('home-nav');
 let createQINav = document.getElementById('create-qi-nav');
 let content = document.getElementById('block-content');
 let pagination = document.getElementById('home-page-pagination');
+
 
 function loadBody() {
     createQINav.removeAttribute('class', 'active')

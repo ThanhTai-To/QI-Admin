@@ -3,6 +3,9 @@ const CREATE_QI_PATH = '/quarantine-information';
 const token = sessionStorage.getItem('token');
 sessionStorage.setItem('token', token);
 console.log(token);
+if (token == null) {
+    location.replace('../pages/login.html');
+}
 sessionStorage.removeItem('currentPage');
 
 
