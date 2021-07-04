@@ -226,7 +226,7 @@ function addDeleteButtonsListener() {
             xhr.setRequestHeader('Authorization', 'Bearer ' + token);
             xhr.onreadystatechange = function (e) {
                 if (this.readyState == 4 && this.status == 200) {
-                    response = JSON.parse(this.response);
+                    let response = JSON.parse(this.response);
                     console.log(response);
                     // delete html div
                     var deleteBlock = document.getElementById(deleteButtonId);
