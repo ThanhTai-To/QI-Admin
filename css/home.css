@@ -87,7 +87,7 @@ p {
 }
 
 .block-qi:hover {
-    background-color: #e1e2e7;
+    background-color: #f8f5f5;
     border-style: solid;
     border-radius: 15px;
     box-shadow: 5px 5px 3px grey;
@@ -151,6 +151,10 @@ p {
     background-color: rgb(155, 150, 150);
 }
 
+#home-page-pagination {
+    box-shadow: -5px 8px 10px 0px grey;
+}
+
 @media (min-width: 1200px) {
     .container {
         max-width: 900px;
@@ -182,4 +186,32 @@ p {
 }
 
 /* Loader */
-#loader { justify-content: center;}
+#loader {
+    justify-content: center;
+}
+
+/* Modal */
+.modal-backdrop {
+    background-color: grey;
+    opacity: 0.5;
+}
+
+select,
+input[type="date"],
+input[type="text"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    /* border: 1px solid #ccc; */
+    box-sizing: border-box;
+
+}
+
+/* Error */
+pre {
+    color: red;
+    font-size: 14px;
+    font-style: italic;
+    margin-bottom: 10px;
+}

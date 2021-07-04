@@ -36,6 +36,7 @@ body {
     background-color: #6d6d85;
     color: white;
 }
+
 .sidebar a.active:hover {
     background-color: #606186;
     color: white;
@@ -73,7 +74,7 @@ input[type="text"] {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     box-sizing: border-box;
 
 }
@@ -94,6 +95,7 @@ button {
     justify-content: center;
 }
 
+/* Error  */
 pre {
     color: red;
     font-size: 14px;
