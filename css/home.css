@@ -112,11 +112,11 @@ p {
 }
 
 .from-place {
-    color: green;
+    color: rgb(211, 12, 12);
 }
 
 .destination-place {
-    color: rgb(211, 12, 12);
+    color: green;
 }
 
 .utils {

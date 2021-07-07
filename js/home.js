@@ -79,9 +79,9 @@ function displayBlockQuarantineInformation(element) {
             </div>
             <hr>
             <div class="row content-block-qi">
-                <p class="text from-place">` + PROVINCE[element.originFrom].vi + `</p>
-                <p class="text fixed-text">will isolate people come from</p>
                 <p class="text destination-place">` + PROVINCE[element.destination].vi + `</p>
+                <p class="text fixed-text">will isolate people come from</p>
+                <p class="text from-place">` + PROVINCE[element.originFrom].vi + `</p>
             </div>
             <div class="row reason-updated">
                 ` + checkReasonUpdated(element.status, element.reasonUpdated) + `
